@@ -13,7 +13,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
-form {
+#div-form {
     display: flex;
     gap: 10px;
 }
@@ -31,4 +31,27 @@ li {
     padding: 1rem;
     border-radius: 5px;
 }
-
+.edit-btn{
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    background-color: blue;
+    color: #f9f9f9;
+}
+.delete-btn{
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    background-color: red;
+    color: #f9f9f9;
+}
+.complete-btn{
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+    background-color: green;
+    color: #f9f9f9;
+}
