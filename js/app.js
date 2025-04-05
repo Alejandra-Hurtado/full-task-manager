@@ -39,15 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
             task => {
                 const li = document.createElement('li');
                 li.innerHTML =
-                    '<span>' + task.text + '</span>' +
+                    '<span >' + task.text + '</span>' +
                     '<div>' +
-                    '<button class="edit-btn" onclick="editTask(' + task.id + ')">' +
-                    'Editar </button>' +
-                    '<button class="delete-btn" onclick="deleteTask(' + task.id + ')">' +
-                    'Eliminar </button>' +
-                    '<button class="complete-btn" onclick="completeTask(' + task.id + ')">' +
-                    'completo </button>' +
+                        '<button class="edit-btn" onclick="editTask(' + task.id + ')">' +
+                        'Editar </button>' +
+                        '<button class="delete-btn" onclick="deleteTask(' + task.id + ')">' +
+                        'Eliminar </button>' +
+                        '<button class="complete-btn" onclick="completeTask(' + task.id + ')">' +
+                        (task.complete ? 'Desmarcar' : 'Completar') + '</button>'
                     '</div>';
+                
+                    //si la tarea esta completada, al elemento li le agrego una clase
+                    if (task.complete) {
+                        li.classList.add('completed');
+                    }
+
                 taskList.appendChild(li);
             }
         );
@@ -67,6 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     window.completeTask = function (id) {
-
-    }
+        tasks = tasks.map(task => //recorre las tareas y crea nuevo arreglo si task.id coincide con id
+            task.id === id ? { ...task, complete: !task.complete } : task // compara, copia propiedades invierte valor de complete
+        );
+        renderTasks();
+    };
 });

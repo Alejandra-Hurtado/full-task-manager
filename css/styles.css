@@ -31,7 +31,8 @@ li {
     padding: 1rem;
     border-radius: 5px;
 }
-.edit-btn{
+
+.edit-btn {
     margin-right: 5px;
     border-radius: 5px;
     padding: 5px;
@@ -39,7 +40,8 @@ li {
     background-color: blue;
     color: #f9f9f9;
 }
-.delete-btn{
+
+.delete-btn {
     margin-right: 5px;
     border-radius: 5px;
     padding: 5px;
@@ -47,11 +49,23 @@ li {
     background-color: red;
     color: #f9f9f9;
 }
-.complete-btn{
+
+.complete-btn {
     margin-right: 5px;
     border-radius: 5px;
     padding: 5px;
     border-color: white;
     background-color: green;
     color: #f9f9f9;
+}
+.completed {
+    background-color: #d4edda; /* verde claro */
+}
+
+.completed span {
+    text-decoration: line-through;    
+}
+.completed .edit-btn,
+.completed .delete-btn {
+    display: none;
 }
