@@ -48,7 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Editar </button>' +
                     '<button class="text-red-600 hover:underline" onclick="deleteTask(' + task.id + ')">' +
                     'Eliminar </button>' +
+                    '<button class="text-green-600 hover:underline" onclick="completeTask(' + task.id + ')">' +
+                         (task.complete ? 'Desmarcar' : 'Completar') + '</button>'
                     '</div>';
+
+                    if (task.complete) {
+                        li.classList.add('completed');
+                    }
                 taskList.appendChild(li);
             }
 
