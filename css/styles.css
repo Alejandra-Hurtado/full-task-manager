@@ -58,13 +58,15 @@ li {
     background-color: green;
     color: #f9f9f9;
 }
+
 .completed {
-    background-color: #d4edda; /* verde claro */
+    background-color: #d4edda;
 }
 
 .completed span {
-    text-decoration: line-through;    
+    text-decoration: line-through;
 }
+
 .completed .edit-btn,
 .completed .delete-btn {
     display: none;

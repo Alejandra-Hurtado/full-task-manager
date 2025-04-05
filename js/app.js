@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         (task.complete ? 'Desmarcar' : 'Completar') + '</button>'
                     '</div>';
                 
-                    //si la tarea esta completada, al elemento li le agrego una clase
+                    //si la tarea esta completada, al elemento li le agrego la clase completed
                     if (task.complete) {
                         li.classList.add('completed');
                     }
