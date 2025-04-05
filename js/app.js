@@ -1,3 +1,20 @@
+const style = document.createElement('style');
+style.textContent = `
+    .completed {
+        background-color: #d1fae5; 
+    }
+
+    .completed span{
+        text-decoration: line-through;
+    }
+
+    .completed .text-blue-600,
+    .completed .text-red-600 {
+        display: none;
+    }
+`;
+document.head.appendChild(style);
+
 document.addEventListener('DOMContentLoaded', () => {
     const taskForm = document.getElementById('task-form');
     const taskInput = document.getElementById('task-input');
@@ -48,13 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Editar </button>' +
                     '<button class="text-red-600 hover:underline" onclick="deleteTask(' + task.id + ')">' +
                     'Eliminar </button>' +
-                    '<button class="text-green-600 hover:underline" onclick="completeTask(' + task.id + ')">' +
-                         (task.complete ? 'Desmarcar' : 'Completar') + '</button>'
-                    '</div>';
+                    '<button class=" text-green-600 hover:underline" onclick="completeTask(' + task.id + ')">' +
+                    (task.complete ? 'Desmarcar' : 'Completar') + '</button>'
+                '</div>';
 
-                    if (task.complete) {
-                        li.classList.add('completed');
-                    }
+                if (task.complete) {
+                    li.classList.add('completed');
+                }
                 taskList.appendChild(li);
             }
 
@@ -76,4 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
             editingId = et.id;
         }
     }
+    window.completeTask = function (id) {
+        tasks = tasks.map(task => //recorre las tareas y crea nuevo arreglo si task.id coincide con id
+            task.id === id ? { ...task, complete: !task.complete } : task // compara, copia propiedades invierte valor de complete
+        );
+        renderTasks();
+    };
 });
