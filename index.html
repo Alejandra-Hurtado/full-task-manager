@@ -13,14 +13,52 @@
 <body>
     <main>
         <h1>Gestor de tareas</h1>
-        <div id="div-form">
-            <h2>Este es el formulario para crear tareas</h2>
-            <input type="text" id="task-input" placeholder="Escribe una tarea" required />
-            <button id="task-form">Agregar</button>
-        </div>
-        <ul id="task-list">
 
-        </ul>
+        <form action="server/task/index.php" method="post" class="my-form">
+            <!--
+            title 
+            description 
+            due_date 
+            complete 
+            user_id 
+            category_id
+            -->
+            <label for="title" class="field">
+                <span>Title: </span>
+                <input type="text" name="title" placeholder="title" id="title" required />
+                <span class="req-field">*</span>
+            </label>
+            
+            <label for="description" class="field">
+                <span>Description:</span>
+                <input type="text" name="description" placeholder="description" id="description" />
+            </label>
+            
+            <label for="due_date" class="field">
+                <span>Release date: </span>
+                <input type="date" name="due_date" placeholder="due_date" id="due_date" />
+            </label>
+            
+            <label for="complete" class="field cbx-g">
+                <span>¿Is completed? </span>
+                <input !checked type="checkbox" name="complete" placeholder="complete" id="complete" />
+            </label>
+            
+            <label for="user_id" class="field">
+                <span>User id: </span>
+                <input type="number" name="user_id" placeholder="user_id" id="user_id" required/>
+                <span class="req-field">*</span>
+            </label>
+            
+            <label for="category_id" class="field">
+                <span>Category id: </span>
+                <input type="number" name="category_id" placeholder="category_id" id="category_id" required/>
+                <span class="req-field">*</span>
+            </label>
+        
+            <button type="submit">Enviar</button>
+        </form>
+        <ul id="task-list"></ul>
     </main>
 </body>
 
