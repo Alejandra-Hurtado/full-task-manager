@@ -135,4 +135,5 @@ li {
 }
 .req-field{
     color: red;
+    font-weight: bold;
 }
