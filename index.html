@@ -7,7 +7,6 @@
     <title>Task Manager</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
-    <script src='js/app.js'></script>
 </head>
 
 <body>
@@ -15,49 +14,59 @@
         <h1>Gestor de tareas</h1>
 
         <form action="server/task/create.php" method="post" class="my-form">
-            <!--
-            title 
-            description 
-            due_date 
-            complete 
-            user_id 
-            category_id
-            -->
             <label for="title" class="field">
                 <span><span class="req-field">*</span>Title: </span>
                 <input type="text" name="title" placeholder="title" id="title" required />
-                
             </label>
-            
+
             <label for="description" class="field">
                 <span>Description:</span>
                 <input type="text" name="description" placeholder="description" id="description" />
             </label>
-            
+
             <label for="due_date" class="field">
                 <span>Release date: </span>
                 <input type="date" name="due_date" placeholder="due_date" id="due_date" />
             </label>
-            
+
             <label for="complete" class="field cbx-g">
                 <span>¿Is completed? </span>
                 <input !checked type="checkbox" name="complete" placeholder="complete" id="complete" />
             </label>
-            
+
             <label for="user_id" class="field">
                 <span><span class="req-field">*</span>User id: </span>
-                <input type="number" name="user_id" placeholder="user_id" id="user_id" required/>
+                <input type="number" name="user_id" placeholder="user_id" id="user_id" required />
             </label>
-            
+
             <label for="category_id" class="field">
                 <span><span class="req-field">*</span>Category id: </span>
-                <input type="number" name="category_id" placeholder="category_id" id="category_id" required/> 
+                <input type="number" name="category_id" placeholder="category_id" id="category_id" required />
             </label>
-        
             <button type="submit">Enviar</button>
         </form>
         <ul id="task-list"></ul>
+
+        <h2>Categorías</h2>
+        <form action="server/category/create.php" method="post" class="my-form">
+            <label for="category_id" class="field">
+                <span><span class="req-field">*</span>Category id: </span>
+                <input type="number" id="category_id_c" name="category_id" placeholder="category_id" required />
+            </label>
+            <label for="name_category" class="field">
+                <span>Name</span>
+                <input type="text" name="name" placeholder="name_category" id="name" />
+            </label>
+            <label for="user_id" class="field">
+                <span><span class="req-field">*</span>User id: </span>
+                <input type="number" name="user_id" placeholder="user_id" id="user_id_c" required />
+            </label>
+
+            <button type="submit">Guardar</button>
+        </form>
+        <ul id="category-list"></ul>
     </main>
+    <script src='js/app.js'></script>
 </body>
 
 </html>
